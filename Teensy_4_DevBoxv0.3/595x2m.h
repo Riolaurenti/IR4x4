@@ -78,12 +78,15 @@ void send595() {
     digitalWrite(lPin, 1); //return the latch pin high to signal chip that it 
     // delay(300); // debug
 }
-void read595() { // replace J and loop with button read Global values
-    menuM_A = menu_A;
-    menuM_B = menu_B;
+void read595() { // replace J and loop with button read Global values  
     dataRED = menuLEDa[menu_A];
     dataGREEN = menuLEDb[menu_B];
-    if(menu_A != menuM_A || menu_B != menuM_B ) send595(); // if anything has changed, send new values
+    if(menu_A != menuM_A || menu_B != menuM_B ) {
+      send595(); // if anything has changed, send new values
+      //sendPRG(); if program change messages are enabled...
+    }
+    menuM_A = menu_A;
+    menuM_B = menu_B;
 }
 void blinkAll_2Bytes(int n, int d) {
   digitalWrite(lPin, 0);
