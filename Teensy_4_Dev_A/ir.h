@@ -30,11 +30,12 @@ void read_IR(){
       routeIR_R();
       
     }
-
+    /*
     DPRINT("  IR - L =   ");
     DPRINTLN(irUSE[0]);
     DPRINT("  IR - R =   ");
     DPRINTLN(irUSE[1]);
     DPRINTLN();DPRINTLN();
+    */
   }
  

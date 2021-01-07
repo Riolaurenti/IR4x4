@@ -49,8 +49,8 @@ void read4051( int a){
     }
     //DPRINT(String(inputValue) + "\t");
   }
-  //Serial.print("MUX VALUE =");
-  //Serial.print(muxC[7]);
+  //DPRINT("MUX VALUE =");
+  //DPRINT(muxC[7]);
   //DPRINTLN();
   //delay(200); //debug
 }

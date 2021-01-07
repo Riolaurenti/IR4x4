@@ -7,11 +7,9 @@
 #include "macros.h"
 #include "midiCtrls.h"
 #include "utils.h"
-
 #include "4051x3.h"
 #include "595x2m.h"
 #include "ir.h"
-
 
 void setup() {
   DBEGIN(9600);
@@ -43,7 +41,6 @@ void loop() {
   if (sinceTest3 >= 100) {
     sinceTest3 = sinceTest3 - 30;
     read_IR();
-    //routeIR_R();
     // DPRINTLN("                            Test3 (1.3 sec)");
   }
 

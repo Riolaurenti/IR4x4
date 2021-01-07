@@ -27,23 +27,7 @@ void routeIR_L() {
   DPRINTLN();
   */
 }
-/*
-void routeIR_R() {
- //if the value is 0, set a flag and run the note off script 
- if(irUSE[1] == 0) {  // if the sensor is inactive
-  if(!f_IO){ //if the flag isn't high
-    for(int i = 0 ; i < 80; i++){
-      M_OFF(32 + i, 100 , 1);// turn all notes off
-    }
-  }
-  f_IO = 1; //then turn on the flag
- }
- else { 
-  M_ON(32 + (irUSE[1] / 2), 100 , 1);
-  f_IO = 0; // if a note occours, turn off the flag.
- }
-}
-*/
+
 void routeIR_R() {
  if(!irUSE[1]) {  // if the sensor is inactive
     M_OFF(last_IR, 0 , (menu_A + 1) );// turn all notes off
