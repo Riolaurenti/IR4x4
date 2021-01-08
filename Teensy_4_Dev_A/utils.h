@@ -44,7 +44,7 @@ void checkStates() {
 void switchOptions(){
   if(muxC[4]> 900) { // Top Right Button
     menu_B = menu_B + 1 ; 
-    if(menu_B > 7) menu_B = 0;
+    if(menu_B > 2) menu_B = 0;
   }
   if(muxC[1] > 900) { // Bottom Right Button
     if(menu_A >= 7) menu_A = menu_A ;

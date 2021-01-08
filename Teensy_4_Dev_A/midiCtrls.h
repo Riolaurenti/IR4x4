@@ -1,17 +1,18 @@
 void sendMIDIctrl(int ctrl, int value, int chan) {
-  //if(value > 127 || value < 0) return;
+  if(ctrl > 127 || ctrl < 1) return;
+  if(value > 127 || value < 0) return;
   M_CTRL(ctrl,value,chan);
   //DPRINTLN("sent");
 }
 
 void routeSwitches(){
   if( f_switch[0] != f_switchMEM[0] ) {
-    M_CTRL(127,(f_switch[0]*127) ,1);
+    M_CTRL(59,(f_switch[0]*127) ,1);
   } 
   f_switchMEM[0] = f_switch[0];
   
   if( f_switch[1] != f_switchMEM[1] ) {
-    M_CTRL(127,(f_switch[1]*127) ,1);
+    M_CTRL(60,(f_switch[1]*127) ,1);
   } 
   f_switchMEM[1] = f_switch[1];
 }
@@ -39,12 +40,13 @@ void routeIR_R() {
  } 
 }
 void routeMsg() {
-  /*
-  int mathCC = (64 + (menu_A*8));
-  int mathCC_B = (96 + (menu_A*8));
-  */
-  int mathCC = (64);
-  int mathCC_B = (96);
+  
+  int mathCC = (64 + (menu_B*8));  
+  int mathCC_B = (88 + (menu_A*8));
+  //int mathCC_B = (96);
+  
+  //int mathCC = (64);
+  //int mathCC_B = (96);
   
   for(int i = 0; i < 8 ; i++){
     if(f_muxA[i]){
