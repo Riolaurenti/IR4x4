@@ -18,7 +18,8 @@ void routeSwitches(){
 }
 
 void routeIR_L() {
-  int mathCC_C = 63 - menu_B;
+  //int mathCC_C = 63 - menu_B;
+  int mathCC_C = 63;
   sendMIDIctrl( mathCC_C , irUSE[0] , 1 );  
   /*
   DPRINT("sent - CC ");
