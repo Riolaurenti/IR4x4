@@ -24,7 +24,14 @@ void displayVals () {
   }
   DPRINTLN();
 }
-
+void debug_rot(){
+  DPRINTLN();
+  for(int i = 0; i< 8; i++){
+    DPRINT(ROT_vals[i]);
+    DPRINT(" / ");
+  }
+  DPRINTLN();
+}
 void bit_bash(){
   for(int i=0;i<8;i++){
     bitWrite(c_R, i, a_R[i]);

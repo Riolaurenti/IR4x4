@@ -25,7 +25,6 @@ void menu_states() { // run every n seconds seperate to update global states_men
         states_menu[i] += 1;
         f_muxA[i] = LOW;
       }
-        //states_menu[i] = states_menu[i] + 1;
       if (states_menu[i] > no_states) states_menu[i] = 0;  
       }
   }
@@ -34,14 +33,8 @@ void map_4051() {
   for (int i = 0; i < 8; i++) {
     mux_map[i] = map(muxA[i], 0, 1023, 0, 127);
     if (mux_map[i] == 127 ) f_muxA[i] = HIGH;
-    //else f_muxA[i] = LOW;
-    //DPRINT(mux_map[i]);
-   // DPRINT(" /t ");
-
+   }
   }
-  //DPRINTLN();
-  //menu_states();
-}
 void read4051() {
   for (byte pin = 0; pin <= 7; pin++)  {
     selectMuxPin(pin); // Select one at a time

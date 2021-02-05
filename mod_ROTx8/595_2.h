@@ -30,7 +30,7 @@ void send595() {
     shiftOut(dataPin, clockPin, dataRED); //move 'em out
     shiftOut(dataPin, clockPin, dataBLUE); //move 'em out
     digitalWrite(latchPin, 1); //return the latch pin high to signal chip that it 
-    delay(300);
+    //delay(300);
 }
 void debug(){
   dataRED = c_R; // [1] = all 0
